@@ -6,7 +6,6 @@ const User = require("../models/user");
 require("dotenv").config();
 
 router.post("/register", (req, res) => {
-  console.log(req.body);
   if (!req.body.username || !req.body.password) {
     res.json({success: false, msg: "Please pass username and password."});
   } else {
@@ -18,9 +17,10 @@ router.post("/register", (req, res) => {
     newUser.save(function(err) {
       if (err) {
         console.log(err);
-        return res
-          .status(401)
-          .send({success: false, msg: "Error while creating a user"});
+        return res.send({
+          success: false,
+          msg: `User ${req.body.username} exists.`
+        });
       }
       res.json({success: true, msg: "Successful created new user."});
     });
@@ -61,10 +61,13 @@ router.post("/login", (req, res) => {
 router.get(
   "/is_logged_in",
   passport.authenticate("jwt", {session: false}),
-  (req, res) => res.send({success: true})
+  (req, res) => {
+    res.send({success: true});
+  }
 );
+router.get("/", (req, res) => res.send("/"));
 
-router.delete(
+router.get(
   "/logout",
   passport.authenticate("jwt", {session: false}),
   (req, res) => {

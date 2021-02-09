@@ -8,7 +8,6 @@ const applyPassportStrategy = passport => {
   options.secretOrKey = process.env.secret;
   passport.use(
     new Strategy(options, (payload, done) => {
-      console.log(payload);
       User.findOne({username: payload.username}, (err, user) => {
         if (err) {
           return done(err, false);

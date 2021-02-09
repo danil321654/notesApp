@@ -51,8 +51,7 @@ router.post(
     if (!user) return res.sendStatus(401);
 
     let newNote = new Note({
-      name: req.body.name,
-      description: req.body.description,
+      ...req.body,
       user: user["_id"]
     });
 
@@ -63,6 +62,31 @@ router.post(
     }
 
     return res.send("node added");
+  }
+);
+
+router.post(
+  "/deleteNote",
+  passport.authenticate("jwt", {session: false}),
+  async (req, res, next) => {
+    if (!req.user) return res.sendStatus(401);
+    let user;
+    try {
+      user = await User.findOne({
+        username: req.user.username
+      });
+    } catch (e) {
+      return res.sendStatus(500);
+    }
+
+    if (!user) return res.sendStatus(401);
+
+    try {
+      await Note.findOneAndRemove({_id: req.body["_id"]});
+    } catch (e) {
+      console.log(e);
+    }
+    return res.send("note removed");
   }
 );
 
