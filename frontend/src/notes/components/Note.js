@@ -39,7 +39,8 @@ const stylesObject = {
   },
   description: {
     textAlign: "justify",
-    wordWrap: "break-word"
+    wordWrap: "break-word",
+    height: "max-content"
   },
   timeWrapper: {
     marginTop: "10px",
@@ -70,7 +71,11 @@ function Note({auth, note, history, deleteNote}) {
           <DeleteIcon fontSize="small" />
         </IconButton>
       </div>
-      <div className={classes.description}>{note.description}</div>
+      <div className={classes.description}>
+        {note.description.split("\n").map(str => (
+          <div>{str}</div>
+        ))}
+      </div>
       <div className={classes.timeWrapper}>
         <div className={classes.date}>{moment(date).format("llll")}</div>
         <div className={classes.timeAgo}>
