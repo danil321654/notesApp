@@ -1,8 +1,8 @@
 1. Backend folder:
-    run in terminal `npm start`
+    run in terminal `npm i`, then `npm start`
 
 2. Frontend folder:
-    run in terminal `npm start`
+    run in terminal `npm i`, then `npm start`
 
 3. Browser:
     Go to `http://localhost:3000`    
