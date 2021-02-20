@@ -50,5 +50,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:3004"
+  "proxy": "https://notes-app-fullstack.herokuapp.com/"
 }
