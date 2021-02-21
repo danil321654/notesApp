@@ -116,7 +116,15 @@ function NewNote({auth, history, addNote}) {
         <div className={classes.name}>
           <Input value={name} onChange={e => setName(e.target.value)} />
         </div>{" "}
-        <IconButton aria-label="delete" style={stylesObject.button}>
+        <IconButton
+          aria-label="delete"
+          style={stylesObject.button}
+          onClick={() => {
+            setName("");
+            setDescription("");
+            setColor(colors[0]);
+          }}
+        >
           <DeleteIcon />
         </IconButton>
       </div>
