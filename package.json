@@ -1,23 +1,27 @@
 {
-  "name": "notesApp",
-  "version": "0.1.0",
+  "name": "backend",
+  "version": "1.0.0",
   "description": "",
-  "main": "./backend/index.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd frontend && npm run build",
-    "install-frontend": "cd frontend && npm install",
-    "heroku-postbuild": "npm run install-frontend && npm run build",
-    "start": "node ./backend/index.js",
-    "frontend": "cd frontend && npm start"
+    "build": "cd frontend && npm i && npm run build",
+    "start": "node index.js"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.0",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongoose": "^5.7.9"
+    "express-passport": "^0.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.12",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "util": "^0.12.3"
   }
-
 }
