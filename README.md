@@ -1,3 +1,16 @@
+# `example: https://notes-app-fullstack.herokuapp.com`
+
+# Production:
+# `npm run build`
+# `npm start`
+
+
+
+#  -------------
+
+
+
+# Local development:
 1. Backend folder:
     run in terminal `npm i`, then `npm start`
 
@@ -11,6 +24,3 @@ Screenshots:
 https://ibb.co/kmxTdMP
 https://ibb.co/GHqYBDZ
 https://ibb.co/kH52XXL
-
-
-App is running on my atlas mongodb, which is free, so very limited.
