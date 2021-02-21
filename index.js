@@ -21,8 +21,10 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
-app.use("*", (req, res) =>
-  res.sendFile(path.join(__dirname, "frontend", "build", "index.html"))
-);
+if (process.env.NODE_ENV === "production") {
+  app.use("*", (req, res) =>
+    res.sendFile(path.join(__dirname, "frontend", "build", "index.html"))
+  );
+}
 
 app.listen(3004);
