@@ -1,5 +1,5 @@
-# `example: https://notes-app-fullstack.herokuapp.com`
-
+# `example:`
+# `https://notes-app-fullstack.herokuapp.com`
 # Production:
 # `npm run build`
 # `npm start`
