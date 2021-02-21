@@ -7,6 +7,6 @@ const db = mongoose
     useCreateIndex: true
   })
   .then(() => console.log("db connected"))
-  .catch(err => console.log(process.env.PORT));
+  .catch(err => console.log(err));
 
 module.exports = db;
